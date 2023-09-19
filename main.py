@@ -43,7 +43,7 @@ if len(sys.argv) == 4:
     stitch_width = eval(sys.argv[2])
     stitch_height = eval(sys.argv[3])
 else:
-    diameter = eval(input("diameter of the spere in mm: "))
+    diameter = eval(input("diameter of the sphere in mm: "))
     print("you can also enter a fraction like 25/4 if 4 stitches equal 25 mm")
     stitch_width = eval(input("width per stitch in mm: "))
     stitch_height = eval(input("height per stitch in mm: "))
@@ -135,10 +135,5 @@ for stitches in stitches_per_row:
 
 row_guide.pop(0)
 
-print(row_guide)
-
 for row in row_guide:
-    print(row[0], create_visualization(row))
-
-for row in row_guide:
-    print(row[0], create_guide(row))
+    print("Row {}, {} stitches: {}".format(row_guide.index(row)+1, row[0], create_guide(row)))
